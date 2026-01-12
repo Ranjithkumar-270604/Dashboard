@@ -17,17 +17,6 @@ Tech stack
 
 Repository structure
 
-src/
-├── components/      # React components used across the dashboard
-├── api/             # Data fetching and data helpers
-├── theme/           # Theme definitions (light/dark)
-├── App.jsx          # Main app component and routes
-├── main.jsx         # App bootstrap
-└── index.css        # Global styles
-
-public/
-└── data/            # JSON or sample CSV data used by charts
-
 Quick start
 
 Prerequisites
