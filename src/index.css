@@ -1,0 +1,290 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+
+:root {
+  
+  --bg: #f4f6f9;
+  --panel: #ffffff;
+  --kpi-bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+
+  --blue: #6ecbff;
+  --cyan: #32d2e3;
+  --green: #00d09c;
+  --orange: #ffb36b;
+  --red: #ff7b7b;
+  --yellow: #facc15;
+}
+
+[data-theme="dark"] {
+
+  --bg: radial-gradient(circle at top, #2a2a2a, #050505);
+  --panel: linear-gradient(180deg, #0e0e0e, #050505);
+  --kpi-bg: #000000;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --border: #1f1f1f;
+}
+
+
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.topbar-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.date-text {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+
+.toggle-group {
+  display: flex;
+  padding: 3px;
+  background: #000;
+  border-radius: 999px;
+}
+
+.toggle-btn {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.toggle-btn.active {
+  background: #111;
+  color: var(--blue);
+}
+
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+
+
+
+.kpi-strip {
+  margin: 16px;
+  background: var(--kpi-bg);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  overflow: hidden;
+}
+
+.kpi-card {
+  padding: 18px;
+  position: relative;
+}
+
+[data-theme="dark"] .kpi-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--blue), transparent);
+}
+
+.kpi-card p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.kpi-card h2 {
+  margin-top: 6px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+
+
+.dashboard-grid {
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  min-height: 360px;
+}
+
+.panel-header {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Ensure charts never clip */
+.recharts-responsive-container {
+  min-height: 300px;
+}
+
+
+
+.recharts-bar-label {
+  fill: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+
+.donut-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.donut-side {
+  text-align: center;
+}
+
+.donut-percent {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+
+.grade-layout {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.grade-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grade-item {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.grade-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+.district-rank-card {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+
+.district-rank-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.district-rank-header h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.district-rank-header select {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.district-rank-header select:focus {
+  outline: none;
+  border-color: #60a5fa;
+}
+
+@media (max-width: 768px) {
+  .district-rank-card {
+    padding: 14px;
+  }
+}
+
+
+
+.recharts-cartesian-axis-tick text {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
+.recharts-tooltip-wrapper {
+  background: var(--panel) !important;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.theme-btn {
+  width: 100px;
+  height: 30px;
+  border: 2px solid black ;
+  background: transparent;
+  color: rgb(22, 140, 225);
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:black;
+}
+
+.theme-btn:hover {
+  opacity: 0.8;
+}
+
