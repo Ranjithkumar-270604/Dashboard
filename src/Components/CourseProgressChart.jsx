@@ -22,7 +22,7 @@ export default function CourseProgressChart({ data }) {
         <CartesianGrid
           stroke="#2b2b2b"
           strokeDasharray="3 3"
-          vertical={false}
+          vertical={true}
         />
         <XAxis
           dataKey="district"
@@ -31,7 +31,7 @@ export default function CourseProgressChart({ data }) {
         <YAxis
           tick={{ fill: "#bfbfbf", fontSize: 11 }}
         />
-        <Tooltip />
+        {/* <Tooltip /> */}
         <Legend
           iconType="circle"
           wrapperStyle={{ fontSize: 12 }}

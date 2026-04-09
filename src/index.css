@@ -91,7 +91,6 @@ body {
   color: var(--blue);
 }
 
-
 .topbar-right {
   display: flex;
   align-items: center;
@@ -160,7 +159,7 @@ body {
   margin-bottom: 12px;
 }
 
-/* Ensure charts never clip */
+
 .recharts-responsive-container {
   min-height: 300px;
 }
@@ -168,7 +167,6 @@ body {
 
 
 .recharts-bar-label {
-  fill: #ffffff;
   font-size: 12px;
   font-weight: 500;
 }
@@ -265,7 +263,7 @@ body {
 }
 
 .recharts-tooltip-wrapper {
-  background: var(--panel) !important;
+  background: var(--panel) ;
   border: 1px solid var(--border);
   border-radius: 8px;
 }
@@ -274,7 +272,7 @@ body {
   height: 30px;
   border: 2px solid black ;
   background: transparent;
-  color: rgb(22, 140, 225);
+  color: var(--blue);
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
@@ -287,4 +285,77 @@ body {
 .theme-btn:hover {
   opacity: 0.8;
 }
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .kpi-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .topbar-controls {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .topbar-right {
+    align-self: flex-end;
+  }
+
+  .dashboard-grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpi-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kpi-card h2 {
+    font-size: 20px;
+  }
+
+  .donut-layout {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .grade-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.recharts-responsive-container {
+  width: 100% ;
+  min-height: 260px;
+}
+
+@media (max-width: 768px) {
+  .district-rank-card {
+    overflow-x: auto;
+  }
+
+  .district-rank-card svg {
+    min-width: 700px;
+  }
+}
+
 

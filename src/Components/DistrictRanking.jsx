@@ -31,13 +31,7 @@ export default function DistrictRanking({ data }) {
       <div className="district-rank-header">
         <h4>District Ranking</h4>
 
-        <select
-          value={rankBy}
-          onChange={(e) => setRankBy(e.target.value)}
-        >
-          <option value="enrolled">Rank by Enrollment</option>
-          <option value="pass">Rank by Pass %</option>
-        </select>
+        
       </div>
 
       <ResponsiveContainer width="100%" height={380}>

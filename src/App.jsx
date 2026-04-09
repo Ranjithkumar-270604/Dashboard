@@ -11,6 +11,7 @@ import { fetchDashboard } from "./API/DashBoard";
 export default function App() {
   const [data, setData] = useState(null);
   const [viewMode, setViewMode] = useState("monthly"); 
+ 
 
   useEffect(() => {
     fetchDashboard(2024).then(setData);
@@ -62,7 +63,7 @@ export default function App() {
 
   return (
     <>
-      <TopBar viewMode={viewMode} setViewMode={setViewMode} />
+      <TopBar viewMode={viewMode} setViewMode={setViewMode}  />
 
       <div className="kpi-strip">
         <SummaryCards summary={filteredData.summary} />

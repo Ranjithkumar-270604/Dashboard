@@ -25,6 +25,7 @@ export default function TopBar({ viewMode, setViewMode }) {
         </div>
 
         <span className="date-text">
+          
           {viewMode === "monthly"
             ? "01 Jan, 2024 - 31 Jan, 2024"
             : "01 Jan, 2024 - 31 Mar, 2024"}
